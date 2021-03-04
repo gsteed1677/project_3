@@ -11,6 +11,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+//connect to mongoose DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hobbyDB");
+
 // Define API routes here
 
 // Send every other request to the React app
