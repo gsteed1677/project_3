@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar"
 import Search from "./components/Search"
-import SearchResult from "./components/SearchResult"
+// import SearchResult from "./components/SearchResult"
 import AboutUs from "./components/AboutUs"
 import Trending from "./components/Trending"
 import DumpStuff from "./components/DumpStuff"
+import SignUp from "./components/Forms/SignUp"
+// import LoginForm from "./components/Forms/LoginForm"
+
 
 function App() {
   return (
@@ -15,15 +17,18 @@ function App() {
 
       <Search />
 
-      <SearchResult />
+      {/* <SearchResult /> */}
 
       <Trending />
 
       <DumpStuff />
 
       <AboutUs />
+
+      <SignUp />   
     
     </div>
+    
   );
 }
 
