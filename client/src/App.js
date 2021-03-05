@@ -12,16 +12,24 @@ import SignUp from "./components/Forms/SignUp"
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
+    <Router>
+      <div className="App">
+        <Navbar />
+        {/* <Route exact path="/" component={Home} />
+      <Route exact path="/Login" component={""} />
+      <Route exact path="/Signup" component={""} />
+      <Route exact path="/User" component={""} />
+      <Route exact path="/DumpStuff" component={""} /> */}
+        <Search />
 
-      <Search />
+        {/* <SearchResult /> */}
 
       {/* <SearchResult /> */}
 
-      <Trending />
+        <Trending />
+        {/* <Search /> */}
+        <DumpStuff />
 
-      <DumpStuff />
 
       <AboutUs />
 
