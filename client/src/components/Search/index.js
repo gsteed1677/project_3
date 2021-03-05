@@ -50,7 +50,7 @@ export default function CustomizedInputBase() {
       <InputBase
         ref={searchInput}
         className={classes.input}
-        placeholder="Search Hobby Dump"
+        placeholder="Search Hobby Drop"
         inputProps={{ 'aria-label': 'search google maps' }}
       />
       <IconButton type="submit" className={classes.iconButton} aria-label="search">
