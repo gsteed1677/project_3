@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar"
 import Search from "./components/Search"
@@ -7,7 +8,7 @@ import AboutUs from "./components/AboutUs"
 import Trending from "./components/Trending"
 import DumpStuff from "./components/DumpStuff"
 import SignUp from "./components/Forms/SignUp"
-// import LoginForm from "./components/Forms/LoginForm"
+import LoginForm from "./components/Forms/LoginForm"
 
 
 function App() {
@@ -15,11 +16,11 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        {/* <Route exact path="/" component={Home} />
-      <Route exact path="/Login" component={""} />
-      <Route exact path="/Signup" component={""} />
-      <Route exact path="/User" component={""} />
-      <Route exact path="/DumpStuff" component={""} /> */}
+        {/* <Route exact path="/" component={Home} /> */}
+        {/* <Route exact path="/Login" component={LoginForm} /> */}
+        {/* <Route exact path="/Signup" component={SignUp} /> */}
+        {/* <Route exact path="/User" component={""} />
+        <Route exact path="/DumpStuff" component={""} /> */}
         <Search />
 
         {/* <SearchResult /> */}
@@ -27,16 +28,17 @@ function App() {
       {/* <SearchResult /> */}
 
         <Trending />
-        {/* <Search /> */}
+       
         <DumpStuff />
 
 
-      <AboutUs />
+        <AboutUs />
+        <Route exact path="/Login" component={LoginForm} />
 
-      <SignUp />   
+         
     
     </div>
-    
+    </Router>
   );
 }
 
