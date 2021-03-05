@@ -36,8 +36,15 @@ function App() {
 
         <SignUp />
 
+<<<<<<< HEAD
       </div>
     </Router>
+=======
+      <SignUp />   
+    
+    </div>
+    </ Router>
+>>>>>>> 5e757db74fbd1d17d1138b3943cca5415c566c27
   );
 }
 
