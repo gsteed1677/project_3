@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -7,6 +7,9 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
+import API from '../../util/API'
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,18 +28,34 @@ const useStyles = makeStyles((theme) => ({
 // const handleInputChange = event => {
 //   setSearch(event.target.value);
 // };
+// const upsplash = "https://api.unsplash.com/photos/?client_id=BYKd8TanY-MFPXBF3GlzYikT_A8Yk4WoZTVFaguRV3w"
+
+
+
 
 export default function CustomizedInputBase() {
   const classes = useStyles();
+  const searchInput = useRef();
 
+
+  const SearchHobby = (e) => {
+    e.preventDefault();
+    console.log(searchInput.current.children[0].value)
+    const searchResult = searchInput.current.children[0].value
+    API.unsplash.search.getPhotos({
+      query: searchResult,
+      orientation: "landscape"
+    }).then(res => console.log(res.response.results))
+  }
   return (
-    <Paper component="form" className={classes.root}>
+    <Paper component="form" className={classes.root} onSubmit={SearchHobby}>
       {/* <IconButton className={classes.iconButton} aria-label="menu">
         <MenuIcon />
       </IconButton> */}
       <InputBase
+        ref={searchInput}
         className={classes.input}
-        placeholder="Search Hobby Dump"
+        placeholder="Search Hobby Drop"
         inputProps={{ 'aria-label': 'search google maps' }}
       />
       <IconButton type="submit" className={classes.iconButton} aria-label="search">

@@ -1,5 +1,6 @@
-import React from "react";
-// import logo from "./logo.svg";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar"
 import Search from "./components/Search"
@@ -7,24 +8,34 @@ import Search from "./components/Search"
 import AboutUs from "./components/AboutUs"
 import Trending from "./components/Trending"
 import DumpStuff from "./components/DumpStuff"
+// import unsplash from "./Api";
+// import { toJson } from "unsplash-js";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
+    <Router>
+      <div className="App">
+        <Navbar />
+        {/* <Route exact path="/" component={Home} />
+      <Route exact path="/Login" component={""} />
+      <Route exact path="/Signup" component={""} />
+      <Route exact path="/User" component={""} />
+      <Route exact path="/DumpStuff" component={""} /> */}
+        <Search />
+
+        {/* <SearchResult /> */}
+
+        {/* <SearchResult /> */}
+
+        <Trending />
+        {/* <Search /> */}
+        <DumpStuff />
 
 
+        <AboutUs />
 
-      {/* <SearchResult /> */}
-
-      <Trending />
-      <Search />
-      <DumpStuff />
-
-
-      <AboutUs />
-
-    </div>
+      </div>
+    </Router>
   );
 }
 
