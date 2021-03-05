@@ -10,7 +10,8 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "seed": "node scripts/seedDB.js"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,7 @@
 >>>>>>> 200ae26f339a09533f1c560d0994d9a05780f419
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+    "mongoose": "^5.11.18",
     "react-router-dom": "^5.2.0",
     "typescript": "^4.2.2",
     "unsplash-js": "^7.0.4"

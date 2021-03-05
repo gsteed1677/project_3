@@ -14,24 +14,27 @@ import DumpStuff from "./components/DumpStuff"
 function App() {
   return (
     <Router>
-    <div className="App">
-      <Navbar />
-      {/* <Route exact path="/" component={Home} />
+      <div className="App">
+        <Navbar />
+        {/* <Route exact path="/" component={Home} />
       <Route exact path="/Login" component={""} />
       <Route exact path="/Signup" component={""} />
       <Route exact path="/User" component={""} />
       <Route exact path="/DumpStuff" component={""} /> */}
-      <Search />
+        <Search />
 
-      {/* <SearchResult /> */}
+        {/* <SearchResult /> */}
 
-      <Trending />
+        {/* <SearchResult /> */}
 
-      <DumpStuff />
+        <Trending />
+        {/* <Search /> */}
+        <DumpStuff />
 
-      <AboutUs />
-    
-    </div>
+
+        <AboutUs />
+
+      </div>
     </Router>
   );
 }
