@@ -23,6 +23,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// const [search, setSearch] = useState([]);
+
+// const handleInputChange = event => {
+//   setSearch(event.target.value);
+// };
 // const upsplash = "https://api.unsplash.com/photos/?client_id=BYKd8TanY-MFPXBF3GlzYikT_A8Yk4WoZTVFaguRV3w"
 
 
@@ -41,7 +46,7 @@ export default function CustomizedInputBase() {
       query: searchResult,
       orientation: "landscape"
     }).then(res => console.log(res.response.results))
-}
+  }
   return (
     <Paper component="form" className={classes.root} onSubmit={SearchHobby}>
       {/* <IconButton className={classes.iconButton} aria-label="menu">
@@ -58,8 +63,12 @@ export default function CustomizedInputBase() {
       </IconButton>
       <Divider className={classes.divider} orientation="vertical" />
       {/* <IconButton color="primary" className={classes.iconButton} aria-label="directions"> */}
-        {/* <DirectionsIcon />
+      {/* <DirectionsIcon />
       </IconButton> */}
     </Paper>
+    //   <SearchForm
+    //   handleInputChange={handleInputChange}
+    //   results={search}
+    // />
   );
 }
