@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar"
 import Search from "./components/Search"
@@ -24,19 +25,19 @@ function App() {
 
         {/* <SearchResult /> */}
 
-      {/* <SearchResult /> */}
+        {/* <SearchResult /> */}
 
         <Trending />
         {/* <Search /> */}
         <DumpStuff />
 
 
-      <AboutUs />
+        <AboutUs />
 
-      <SignUp />   
-    
-    </div>
-    
+        <SignUp />
+
+      </div>
+    </Router>
   );
 }
 
