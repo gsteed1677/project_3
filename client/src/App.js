@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar"
 import Search from "./components/Search"
@@ -8,8 +6,9 @@ import Search from "./components/Search"
 import AboutUs from "./components/AboutUs"
 import Trending from "./components/Trending"
 import DumpStuff from "./components/DumpStuff"
-// import unsplash from "./Api";
-// import { toJson } from "unsplash-js";
+import SignUp from "./components/Forms/SignUp"
+// import LoginForm from "./components/Forms/LoginForm"
+
 
 function App() {
   return (
@@ -25,17 +24,19 @@ function App() {
 
         {/* <SearchResult /> */}
 
-        {/* <SearchResult /> */}
+      {/* <SearchResult /> */}
 
         <Trending />
         {/* <Search /> */}
         <DumpStuff />
 
 
-        <AboutUs />
+      <AboutUs />
 
-      </div>
-    </Router>
+      <SignUp />   
+    
+    </div>
+    
   );
 }
 
