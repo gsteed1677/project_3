@@ -1,10 +1,11 @@
 import React from 'react';
 
+
 export function List({ children }) {
     return <ul className="listgroup">{children}</ul>
 }
 
-export function ListItem({ username, title, date, description, price, contactNumber, contactEmail }) {
+export function ListItem({ username, title, date, description, price, number, email }) {
     return (
         <li className="list-group-item">
             <Container>
@@ -20,7 +21,7 @@ export function ListItem({ username, title, date, description, price, contactNum
               Go to recipe!
             </a> */}
                         <h1>Price: ${price}</h1>
-                        <h1>Contact: {contactNumber} || {contactEmail}</h1>
+                        <h1>Contact: {number || email}</h1>
                     </Col>
                 </Row>
             </Container>
