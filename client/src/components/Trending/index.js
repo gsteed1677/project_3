@@ -1,11 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import Radio from '@material-ui/core/Radio';
-import Paper from '@material-ui/core/Paper';
+// import FormLabel from '@material-ui/core/FormLabel';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import RadioGroup from '@material-ui/core/RadioGroup';
+// import Radio from '@material-ui/core/Radio';
+// import Paper from '@material-ui/core/Paper';
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -38,9 +38,9 @@ export default function SpacingGrid() {
   };
 
   const cardData = [
-    {image: "fake.jpg", title: "yeeting"},
-    {image: "fake2.jpg", title: "yetting2"},
-    {image: "fake3.jpg", title: "yetting3"}
+    { image: "fake.jpg", title: "yeeting" },
+    { image: "fake2.jpg", title: "yetting2" },
+    { image: "fake3.jpg", title: "yetting3" }
   ]
 
   return (
@@ -49,27 +49,27 @@ export default function SpacingGrid() {
         <Grid container justify="center" spacing={spacing}>
           {cardData.map((card) => (
             <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={card.image}
-          title={card.title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Trending Hobby, {card.title}
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={card.image}
+                  title={card.title}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Trending Hobby, {card.title}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    Learn more about your Hobby here
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Learn more about your Hobby here
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Learn More
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Learn More
         </Button>
-      </CardActions>
-    </Card>
+              </CardActions>
+            </Card>
           ))}
         </Grid>
       </Grid>
