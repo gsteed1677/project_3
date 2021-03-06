@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Grid from '@material-ui/core/Grid';
 import "./App.css";
 import Navbar from "./components/Navbar"
 import Search from "./components/Search"
@@ -26,8 +27,17 @@ function App() {
         {/* <SearchResult /> */}
 
       {/* <SearchResult /> */}
-
-        <Trending />
+      <Grid container>
+        <Grid item xs={4}>
+        <Trending title = "Top Trending"/>
+        </Grid>
+        <Grid item xs={4}>
+        <Trending title = "Second in line" />
+        </Grid>
+        <Grid item xs={4}>
+        <Trending title = "Third from the top" />
+        </Grid>
+       </Grid> 
         {/* <Search /> */}
         <DumpStuff />
 
