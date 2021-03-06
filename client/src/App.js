@@ -18,11 +18,12 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <Search setData={setData}/>
 
-        {/* <SearchResult /> */}
 
-      {/* <SearchResult /> */}
+       <Search setData={setData}/>
+
+        <SearchInput setData = {setData} data={data}/>
+
       <Grid container>
         <Grid item xs={4}>
         <Trending title = "Top Trending"/>
