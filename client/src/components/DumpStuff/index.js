@@ -12,6 +12,7 @@ import Moment from 'react-moment';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    alignItems: 'center',
   },
   bullet: {
     display: 'inline-block',
