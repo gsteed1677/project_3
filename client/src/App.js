@@ -31,13 +31,13 @@ function App() {
         {/* <Search /> */}
         <DumpStuff />
 
-
-      <AboutUs />
-
       <SignUp />   
+
+
+       <AboutUs />
     
     </div>
-    </ Router>
+    </Router>
   );
 }
 
