@@ -6,7 +6,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { List, ListItem } from '@material-ui/core';
+// import { List, ListItem } from '@material-ui/core';
 import Moment from 'react-moment';
 
 const useStyles = makeStyles({

@@ -22,7 +22,10 @@ const userSchema = new Schema({
         required: "Password is required",
         unique: true,
         trim: true
-    }
+    },
+    // {
+    //     //we will need somethin ghere to save favorites posts for the user, that they drag into the "my favorites list"
+    // }
 
 })
 
