@@ -6,5 +6,6 @@ export default {
 
     getPosts: function () {
         return axios.get("/api/posts")
-    }
+    },
+
 }
