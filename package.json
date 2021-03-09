@@ -28,6 +28,7 @@
     "if-env": "^1.0.4",
     "moment": "^2.29.1",
     "mongoose": "^5.11.18",
+    "react-draggable": "^4.4.3",
     "react-moment": "^1.1.1",
     "react-router-dom": "^5.2.0",
     "typescript": "^4.2.2",

@@ -35,7 +35,8 @@ function App() {
             <Trending title="Third from the top" />
           </Grid>
         </Grid>
-        {/* <Search /> */}
+        <br />
+        <br />
         <DumpStuff />
 
         <SignUp />

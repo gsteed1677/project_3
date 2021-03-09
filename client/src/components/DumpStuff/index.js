@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Typography from '@material-ui/core/Typography';
 // import { List, ListItem } from '@material-ui/core';
 import Moment from 'react-moment';
@@ -50,7 +51,13 @@ export default function OutlinedCard() {
   };
 
   return (
-    <>
+    <> <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
+      {/* this needs to go to the postform comp */}
+      <Button><strong>Make a Post</strong></Button>
+      <Button>My Posts</Button>
+      <Button>My Favorites</Button>
+    </ButtonGroup>
+
       {!posts.length ? (
         <h3>No Results to Display</h3>
       ) : (posts.map(post => {
