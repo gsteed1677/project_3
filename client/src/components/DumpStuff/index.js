@@ -31,11 +31,11 @@ export default function OutlinedCard() {
   const bull = <span className={classes.bullet}>•</span>;
 
   const [posts, setPosts] = useState([])
-  const [num, setNum] = useState(0)
+  // const [num, setNum] = useState(0)
 
   useEffect(() => {
     loadPosts();
-    setNum(num + 1)
+    // setNum(num + 1)
   }, []);
 
   function loadPosts() {
@@ -54,29 +54,34 @@ export default function OutlinedCard() {
         <h3>No Results to Display</h3>
       ) : (posts.map(post => {
         return (
-          <Card className={classes.root}>
-            <CardContent>
+          <>
+            <Card key={post._id} className={classes.root}>
+              <CardContent>
 
-              <Typography variant="h5" component="h2">
-                {post.title}
-              </Typography>
-              <Typography className={classes.pos} color="textSecondary">
-                {post.username} --  <Moment format="dddd, MMMM Do YYYY, h:mm:ss a">
-                  {post.date}
-                </Moment>
-              </Typography>
-              <Typography variant="body2" component="p">
-                <strong>Description:</strong> {post.description}
-                <br />
-                <strong>Price:</strong> ${post.price}
-                <br />
-                <strong>Contact:</strong> {post.contactNumber || post.contactEmail}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small">Learn More</Button>
-            </CardActions>
-          </Card>)
+                <Typography variant="h5" component="h2">
+                  {post.title}
+                </Typography>
+                <Typography className={classes.pos} color="textSecondary">
+                  {post.username} --  <Moment format="dddd, MMMM Do YYYY, h:mm:ss a">
+                    {post.date}
+                  </Moment>
+                </Typography>
+                <Typography variant="body2" component="p">
+                  <strong>Description:</strong> {post.description}
+                  <br />
+                  <strong>Price:</strong> ${post.price}
+                  <br />
+                  <strong>Contact:</strong> {post.contactNumber || post.contactEmail}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small">Learn More</Button>
+              </CardActions>
+            </Card>
+            <h3><strong>My Favorites</strong></h3>
+            <h4><strong>My Posts</strong></h4>
+          </>
+        )
       }
       ))}
     </>)

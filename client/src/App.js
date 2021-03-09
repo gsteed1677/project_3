@@ -36,8 +36,6 @@ function App() {
 
         <SignUp />
 
-        <SignUp />
-
       </div>
     </ Router>
   );
