@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 // import DirectionsIcon from '@material-ui/icons/Directions';
 import API from '../../util/API'
+import { SettingsSystemDaydreamTwoTone } from '@material-ui/icons';
 
 
 
@@ -33,9 +34,10 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function CustomizedInputBase() {
+export default function CustomizedInputBase(props) {
   const classes = useStyles();
   const searchInput = useRef();
+  
 
 
   const SearchHobby = (e) => {
@@ -45,8 +47,12 @@ export default function CustomizedInputBase() {
     API.unsplash.search.getPhotos({
       query: searchResult,
       orientation: "landscape"
-    }).then(res => console.log(res.response.results))
+    }).then(res => {
+      props.setData(res.response.results)
+      console.log(res.response.results)
+    })
   }
+
   return (
     <Paper component="form" className={classes.root} onSubmit={SearchHobby}>
       {/* <IconButton className={classes.iconButton} aria-label="menu">
