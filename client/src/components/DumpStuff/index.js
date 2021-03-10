@@ -57,6 +57,7 @@ export default function OutlinedCard() {
     <> <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
       {/* once we inject the user object we will replace 3 with the dynamic {`user._id`} */}
       <Link to="/postform/3"><Button><strong>Make a Post</strong></Button></Link>
+      {/* //wrap this button in a .filer that grabs the users posts ( user.username === username , then render same cards as below but add an update and delete button where favorites button exists now) then on those buttons they need functionality to update and delete users posts from DB */}
       <Button>My Posts</Button>
       <Button>My Favorites</Button>
     </ButtonGroup>

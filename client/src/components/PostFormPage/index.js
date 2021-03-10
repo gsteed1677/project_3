@@ -3,7 +3,8 @@ import API from "../../util/API";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import React, { Fragment } from 'react';
-import { useParams } from 'react-router'
+import { useParams } from 'react-router';
+import Button from '@material-ui/core/Button';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,19 +27,36 @@ function PostFormPage() {
         title: "",
         description: "",
         price: "",
-        contactNumber: "",
-        contactEmail: "",
-        date: ""
+        contact: "",
     });
 
-    useEffect(() => {
-        createPosts();
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({ ...formObject, [name]: value })
+    };
 
-    }, []);
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        //console.log(formObject)
+        API.savePosts({
+            username: formObject.username,
+            title: formObject.title,
+            description: formObject.description,
+            price: formObject.price,
+            contact: formObject.contact
+        })
+            .then(() => setFormObject({
+                username: "",
+                title: "",
+                description: "",
+                price: "",
+                contact: ""
+            }))
+            .catch(err => console.log(err));
+
+    };
 
     return (
-
-
         <>
             <form className={classes.root} noValidate autoComplete="off">
                 <div>
@@ -48,25 +66,37 @@ function PostFormPage() {
                         label="Username"
                         color="secondary"
                         variant="outlined"
-
-                    />
+                        onChange={handleInputChange}
+                        name="username"
+                        value={formObject.username} />
+                    <br />
                     <TextField
                         required
                         id="outlined-required"
-                        label="Required"
-                        variant="outlined"
+                        label="Title"
                         color="secondary"
-
-                    />
+                        variant="outlined"
+                        onChange={handleInputChange}
+                        name="title"
+                        value={formObject.title} />
                     <TextField
-                        label="Required"
-                        id="outlined-margin-dense"
-                        className={classes.textField}
-                        helperText="Description"
-                        margin="dense"
+                        id="outlined-multiline-static"
+                        label="Multiline"
+                        defaultValue="Default Value"
                         variant="outlined"
                     />
+
+
                 </div>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    // endIcon={<Icon>send</Icon>}
+                    onClick={handleFormSubmit}
+                >
+                    Submit
+      </Button>
             </form>
         </>
     )
