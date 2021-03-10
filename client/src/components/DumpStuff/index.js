@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import './styles.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,7 +77,7 @@ export default function OutlinedCard() {
         return (
           <Grid container spacing={3}>
             <Grid item xs={12} direction="row" alignItems="center">
-          <Card >
+          <Card class="card">
             
             <CardContent>
 
