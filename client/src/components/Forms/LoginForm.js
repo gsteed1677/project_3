@@ -86,7 +86,7 @@ export default function LoginForm() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button
+          <Link to="/"><Button
             type="submit"
             fullWidth
             variant="contained"
@@ -94,7 +94,7 @@ export default function LoginForm() {
             className={classes.submit}
           >
             Sign In
-          </Button>
+          </Button></Link>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
@@ -102,7 +102,7 @@ export default function LoginForm() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/signup" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
