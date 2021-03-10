@@ -7,25 +7,34 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 // import { List, ListItem } from '@material-ui/core';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  paper: {
-    height: 140,
-    width: 100,
-  },
-  control: {
+   card: {
     padding: theme.spacing(2),
+    margin: 'auto',
+    maxWidth: 500,
+    textAlign: 'center',
   },
+  wrapIcon: {
+    verticalAlign: 'middle',
+    display: 'inline-flex'
+   }
+ 
 }));
+
 
 export default function OutlinedCard() {
   const classes = useStyles();
+
+
   // const bull = <span className={classes.bullet}>•</span>;
 
   const [posts, setPosts] = useState([])
@@ -49,18 +58,25 @@ export default function OutlinedCard() {
   //DONT USE BUTTON AS BUTTON USE LINK DESIGNED AS BUTTON
   // <Link to="/signup" className="btn btn-primary">Sign up</Link>
   return (
-    <> <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
+    <div className={classes.root}>
+      <Grid>
+        
+       <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
       {/* once we inject the user object we will replace 3 with the dynamic {`user._id`} */}
       <Link to="/postform/3"><Button><strong>Make a Post</strong></Button></Link>
       <Button>My Posts</Button>
       <Button>My Favorites</Button>
     </ButtonGroup>
+   
+    </Grid>
 
       {!posts.length ? (
         <h3>No Results to Display</h3>
       ) : (posts.map(post => {
         return (
-          <Card className={classes.root}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} direction="row" alignItems="center">
+          <Card >
             
             <CardContent>
 
@@ -81,12 +97,17 @@ export default function OutlinedCard() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Learn More</Button>
+              
+                <Link>
+              <FavoriteIcon to="Favorites" >Favorite</FavoriteIcon>
+              </Link>
             </CardActions>
-          </Card>)
+          </Card>
+          </Grid>
+          </Grid>)
       }
       ))}
-    </>)
+    </div>)
   //       {!posts.length ? (
   //         <h3>No Results to Display</h3>
   //       ) : (

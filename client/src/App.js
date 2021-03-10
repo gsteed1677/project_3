@@ -20,45 +20,6 @@ function App() {
       <div className="App">
         <Navbar />
 
-<<<<<<< HEAD
-
-      <Search setData={setData}/>
-
-      <SearchInput setData = {setData} data={data}/>
-
-      <Grid container>
-        <Grid item xs={4}>
-        <Trending title = "Top Trending"/>
-        </Grid>
-        <Grid item xs={4}>
-        <Trending title = "Second in line" />
-        </Grid>
-        <Grid item xs={4}>
-        <Trending title = "Third from the top" />
-        </Grid>
-       </Grid> 
-       
-      <Grid container>
-        <Grid item xs={4}>
-        <DumpStuff />
-        </Grid>
-        <Grid item xs={4}>
-        <DumpStuff />
-        </Grid>
-        <Grid item xs={4}>
-        <DumpStuff />
-        </Grid>
-      </Grid>
-
-    <Route exact path="signup/:id">
-          <SignUp />
-        </Route> 
-
-
-       <AboutUs />
-    
-    </div>
-=======
         <Route exact path="/">
           <Search setData={setData} />
 
@@ -89,7 +50,6 @@ function App() {
           <PostFormPage />
         </Route>
       </div>
->>>>>>> d82d7024b2dc7d4304b7ad35758eed85ed21e847
     </Router>
   );
 }
