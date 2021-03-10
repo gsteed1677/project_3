@@ -10,6 +10,7 @@ import Trending from "./components/Trending"
 import DumpStuff from "./components/DumpStuff"
 import SignUp from "./components/Forms/SignUp"
 import LoginForm from "./components/Forms/LoginForm"
+import PostFormPage from "./components/PostFormPage"
 
 
 function App() {
@@ -19,31 +20,36 @@ function App() {
       <div className="App">
         <Navbar />
 
+        <Route exact path="/">
+          <Search setData={setData} />
 
-       <Search setData={setData}/>
+          <SearchInput setData={setData} data={data} />
 
-        <SearchInput setData = {setData} data={data}/>
+          <Grid container>
+            <Grid item xs={4}>
+              <Trending title="Top Trending" />
+            </Grid>
+            <Grid item xs={4}>
+              <Trending title="Second in line" />
+            </Grid>
+            <Grid item xs={4}>
+              <Trending title="Third from the top" />
+            </Grid>
+          </Grid>
+          <br />
+          <br />
+          <DumpStuff />
+          <PostFormPage />
 
-      <Grid container>
-        <Grid item xs={4}>
-        <Trending title = "Top Trending"/>
-        </Grid>
-        <Grid item xs={4}>
-        <Trending title = "Second in line" />
-        </Grid>
-        <Grid item xs={4}>
-        <Trending title = "Third from the top" />
-        </Grid>
-       </Grid> 
-        {/* <Search /> */}
-        <DumpStuff />
-
-      <SignUp />   
+          <SignUp />
 
 
-       <AboutUs />
-    
-    </div>
+          <AboutUs />
+        </Route>
+        <Route exact path="/postform/:id">
+          <PostFormPage />
+        </Route>
+      </div>
     </Router>
   );
 }
