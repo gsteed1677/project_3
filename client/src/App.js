@@ -20,9 +20,9 @@ function App() {
         <Navbar />
 
 
-       <Search setData={setData}/>
+      <Search setData={setData}/>
 
-        <SearchInput setData = {setData} data={data}/>
+      <SearchInput setData = {setData} data={data}/>
 
       <Grid container>
         <Grid item xs={4}>
@@ -35,10 +35,22 @@ function App() {
         <Trending title = "Third from the top" />
         </Grid>
        </Grid> 
-        {/* <Search /> */}
+       
+      <Grid container>
+        <Grid item xs={4}>
         <DumpStuff />
+        </Grid>
+        <Grid item xs={4}>
+        <DumpStuff />
+        </Grid>
+        <Grid item xs={4}>
+        <DumpStuff />
+        </Grid>
+      </Grid>
 
-      <SignUp />   
+    <Route exact path="signup/:id">
+          <SignUp />
+        </Route> 
 
 
        <AboutUs />

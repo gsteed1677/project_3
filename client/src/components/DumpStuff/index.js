@@ -9,23 +9,18 @@ import Typography from '@material-ui/core/Typography';
 // import { List, ListItem } from '@material-ui/core';
 import Moment from 'react-moment';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 275,
-    alignItems: 'center',
+    flexGrow: 1,
   },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
+  paper: {
+    height: 140,
+    width: 100,
   },
-  title: {
-    fontSize: 14,
+  control: {
+    padding: theme.spacing(2),
   },
-  pos: {
-    marginBottom: 12,
-  },
-});
+}));
 
 export default function OutlinedCard() {
   const classes = useStyles();
@@ -56,6 +51,7 @@ export default function OutlinedCard() {
       ) : (posts.map(post => {
         return (
           <Card className={classes.root}>
+            
             <CardContent>
 
               <Typography variant="h5" component="h2">

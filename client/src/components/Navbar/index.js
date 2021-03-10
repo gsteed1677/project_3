@@ -6,6 +6,13 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import SingUp from '../Forms/LoginForm'
+import LoginForm from '../Forms/LoginForm';
+
+const Navbar = () => {
+const renderSignUp = () => {
+  return <LoginForm />
+}
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+
   const classes = useStyles();
 
   return (
@@ -33,9 +40,12 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             Hobby Drop
           </Typography>
-          <Button color="inherit" href="/login">Login</Button>
+          <Button color="inherit" href="/LoginForm" onClick={renderSignUp}>Login/Sign Up</Button>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
+
+
+export default Navbar;
