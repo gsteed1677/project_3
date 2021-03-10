@@ -51,7 +51,7 @@ export default function OutlinedCard() {
       .catch(err => console.log(err))
   };
 
-  //DONT USE BUTTON AS BUTTON USE LINK DESIGNED AS BUTTON
+  //DONT USE BUTTON AS BUTTON USE LINK DESIGNED AS BUTTON 
   // <Link to="/signup" className="btn btn-primary">Sign up</Link>
   return (
     <> <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
@@ -85,7 +85,7 @@ export default function OutlinedCard() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Learn More</Button>
+              <Button size="small">Favorites</Button>
             </CardActions>
           </Card>)
       }

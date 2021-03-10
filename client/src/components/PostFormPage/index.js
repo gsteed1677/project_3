@@ -21,20 +21,20 @@ function PostFormPage() {
     const { id } = useParams()
 
     // const [posts, setPosts] = useState([])
-    // const [formObject, setFormObject] = useState({
-    //     username: "",
-    //     title: "",
-    //     description: "",
-    //     price: "",
-    //     contactNumber: "",
-    //     contactEmail: "",
-    //     date: ""
-    // });
+    const [formObject, setFormObject] = useState({
+        username: "",
+        title: "",
+        description: "",
+        price: "",
+        contactNumber: "",
+        contactEmail: "",
+        date: ""
+    });
 
-    // useEffect(() => {
-    //     loadPosts();
+    useEffect(() => {
+        createPosts();
 
-    // }, []);
+    }, []);
 
     return (
 
@@ -45,8 +45,8 @@ function PostFormPage() {
                     <TextField
                         required
                         id="outlined-required"
-                        label="Required"
-
+                        label="Username"
+                        color="secondary"
                         variant="outlined"
 
                     />
