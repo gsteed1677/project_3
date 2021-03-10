@@ -39,12 +39,16 @@ function App() {
           <br />
           <br />
           <DumpStuff />
-          <PostFormPage />
-
-          <SignUp />
+         
 
 
           <AboutUs />
+        </Route>
+        <Route exact path="/login">
+          <LoginForm />
+        </Route>
+        <Route exact path="/signup">
+          <SignUp />
         </Route>
         <Route exact path="/postform/:id">
           <PostFormPage />
