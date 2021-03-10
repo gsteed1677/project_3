@@ -9,6 +9,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Typography from '@material-ui/core/Typography';
 // import { List, ListItem } from '@material-ui/core';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
@@ -30,14 +31,14 @@ const useStyles = makeStyles({
 
 export default function OutlinedCard() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  // const bull = <span className={classes.bullet}>•</span>;
 
   const [posts, setPosts] = useState([])
-  const [num, setNum] = useState(0)
+  // const [num, setNum] = useState(0)
 
   useEffect(() => {
     loadPosts();
-    setNum(num + 1)
+    // setNum(num + 1)
   }, []);
 
   function loadPosts() {
@@ -50,10 +51,12 @@ export default function OutlinedCard() {
       .catch(err => console.log(err))
   };
 
+  //DONT USE BUTTON AS BUTTON USE LINK DESIGNED AS BUTTON
+  // <Link to="/signup" className="btn btn-primary">Sign up</Link>
   return (
     <> <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-      {/* this needs to go to the postform comp */}
-      <Button><strong>Make a Post</strong></Button>
+      {/* once we inject the user object we will replace 3 with the dynamic {`user._id`} */}
+      <Link to="/postform/3"><Button><strong>Make a Post</strong></Button></Link>
       <Button>My Posts</Button>
       <Button>My Favorites</Button>
     </ButtonGroup>

@@ -5,10 +5,10 @@ router.route("/posts")
     .get(postRoutes.findAll)
 // .post(postRoutes.create)
 
-router.route("/:id")
-    .get(booksController.findById)
-    .put(booksController.update)
-    .delete(booksController.remove);
+// router.route("/:id")
+//     .get(postRoutes.findById)
+//     .put(postRoutes.update)
+//     .delete(postRoutes.remove);
 
 
 
