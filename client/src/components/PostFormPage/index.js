@@ -7,6 +7,7 @@ import { useParams } from 'react-router';
 import Button from '@material-ui/core/Button';
 
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
@@ -58,7 +59,12 @@ function PostFormPage() {
 
     return (
         <>
+
+            <br />
+            <br />
+            <br />
             <form className={classes.root} noValidate autoComplete="off">
+                <h2>Post Your Stuff</h2>
                 <div>
                     <TextField
                         required
@@ -79,12 +85,41 @@ function PostFormPage() {
                         onChange={handleInputChange}
                         name="title"
                         value={formObject.title} />
+                    <br />
                     <TextField
-                        id="outlined-multiline-static"
-                        label="Multiline"
-                        defaultValue="Default Value"
+                        required
+                        id="outlined-required"
+                        label="Description"
+                        color="secondary"
                         variant="outlined"
-                    />
+                        onChange={handleInputChange}
+                        name="description"
+                        value={formObject.description} />
+                    <br />
+                    <TextField
+                        required
+                        id="outlined-required"
+                        label="Price $"
+                        color="secondary"
+                        variant="outlined"
+                        onChange={handleInputChange}
+                        name="price"
+                        helper text="Email or Phone #"
+                        value={formObject.price} />
+                    <br />
+                    <TextField
+                        required
+                        id="outlined-required"
+                        label="Contact"
+                        color="secondary"
+                        variant="outlined"
+                        onChange={handleInputChange}
+                        name="contact"
+                        helper text="Email or Phone #"
+                        value={formObject.contact} />
+
+
+
 
 
                 </div>

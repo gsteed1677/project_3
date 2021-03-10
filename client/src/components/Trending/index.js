@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     
   },
   media:{
-      height: 100,
+      height: 60,
   paddingTop: "10", // 16:9,
   marginTop: "30",
 
