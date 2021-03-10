@@ -30,18 +30,18 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Link to="/">
-          <HomeWorkIcon edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </HomeWorkIcon>
+            <HomeWorkIcon edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <MenuIcon />
+            </HomeWorkIcon>
           </Link>
           <Typography variant="h6" className={classes.title}>
-            Hobby Drop
+            HoBBYDRoP
           </Typography>
           <Link to="/login"><Button color="inherit">Login/Signup</Button></Link>
         </Toolbar>
       </AppBar>
     </div>
   );
-  }
+}
 
 

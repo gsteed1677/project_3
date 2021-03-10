@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-   card: {
+  card: {
     padding: theme.spacing(2),
     margin: 'auto',
     maxWidth: 500,
@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
   wrapIcon: {
     verticalAlign: 'middle',
     display: 'inline-flex'
-   }
- 
+  }
+
 }));
 
 
@@ -55,20 +55,21 @@ export default function OutlinedCard() {
       .catch(err => console.log(err))
   };
 
-  //DONT USE BUTTON AS BUTTON USE LINK DESIGNED AS BUTTON
+  //DONT USE BUTTON AS BUTTON USE LINK DESIGNED AS BUTTON 
   // <Link to="/signup" className="btn btn-primary">Sign up</Link>
   return (
     <div className={classes.root}>
       <Grid>
-        
-       <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-      {/* once we inject the user object we will replace 3 with the dynamic {`user._id`} */}
-      <Link to="/postform/3"><Button><strong>Make a Post</strong></Button></Link>
-      <Button>My Posts</Button>
-      <Button>My Favorites</Button>
-    </ButtonGroup>
-   
-    </Grid>
+
+        <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
+          {/* once we inject the user object we will replace 3 with the dynamic {`user._id`} */}
+          <Link to="/postform/3"><Button>Make a Post</Button></Link>
+          {/* //wrap this button in a .filer that grabs the users posts ( user.username === username , then render same cards as below but add an update and delete button where favorites button exists now) then on those buttons they need functionality to update and delete users posts from DB */}
+          <Button>My Posts</Button>
+          <Button>My Favorites</Button>
+        </ButtonGroup>
+
+      </Grid>
 
       {!posts.length ? (
         <h3>No Results to Display</h3>
@@ -76,34 +77,34 @@ export default function OutlinedCard() {
         return (
           <Grid container spacing={3}>
             <Grid item xs={12} direction="row" alignItems="center">
-          <Card >
-            
-            <CardContent>
+              <Card >
 
-              <Typography variant="h5" component="h2">
-                {post.title}
-              </Typography>
-              <Typography className={classes.pos} color="textSecondary">
-                {post.username} --  <Moment format="dddd, MMMM Do YYYY, h:mm:ss a">
-                  {post.date}
-                </Moment>
-              </Typography>
-              <Typography variant="body2" component="p">
-                <strong>Description:</strong> {post.description}
-                <br />
-                <strong>Price:</strong> ${post.price}
-                <br />
-                <strong>Contact:</strong> {post.contactNumber || post.contactEmail}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              
-                <Link>
-              <FavoriteIcon to="Favorites" >Favorite</FavoriteIcon>
-              </Link>
-            </CardActions>
-          </Card>
-          </Grid>
+                <CardContent>
+
+                  <Typography variant="h5" component="h2">
+                    {post.title}
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    {post.username} --  <Moment format="dddd, MMMM Do YYYY, h:mm:ss a">
+                      {post.date}
+                    </Moment>
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    <strong>Description:</strong> {post.description}
+                    <br />
+                    <strong>Price:</strong> ${post.price}
+                    <br />
+                    <strong>Contact:</strong> {post.contactNumber || post.contactEmail}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+
+                  <Link>
+                    <FavoriteIcon to="Favorites" >Favorite</FavoriteIcon>
+                  </Link>
+                </CardActions>
+              </Card>
+            </Grid>
           </Grid>)
       }
       ))}

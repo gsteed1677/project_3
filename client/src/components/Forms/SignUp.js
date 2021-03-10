@@ -49,6 +49,8 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
 
+  //we need a handleInputChange function here to grab input from the user
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -70,6 +72,7 @@ export default function SignUp() {
                 fullWidth
                 id="firstName"
                 label="First Name"
+                // need a handleinputchange and name/value
                 autoFocus
               />
             </Grid>
@@ -120,6 +123,7 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+          // we need a handleformsubmit that adds the user and password to the users db
           >
             Sign Up
           </Button>

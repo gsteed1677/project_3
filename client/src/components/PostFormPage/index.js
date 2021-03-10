@@ -3,7 +3,9 @@ import API from "../../util/API";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import React, { Fragment } from 'react';
-import { useParams } from 'react-router'
+import { useParams } from 'react-router';
+import Button from '@material-ui/core/Button';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,52 +23,115 @@ function PostFormPage() {
     const { id } = useParams()
 
     // const [posts, setPosts] = useState([])
-    // const [formObject, setFormObject] = useState({
-    //     username: "",
-    //     title: "",
-    //     description: "",
-    //     price: "",
-    //     contactNumber: "",
-    //     contactEmail: "",
-    //     date: ""
-    // });
+    const [formObject, setFormObject] = useState({
+        username: "",
+        title: "",
+        description: "",
+        price: "",
+        contact: "",
+    });
 
-    // useEffect(() => {
-    //     loadPosts();
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({ ...formObject, [name]: value })
+    };
 
-    // }, []);
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        //console.log(formObject)
+        API.savePosts({
+            username: formObject.username,
+            title: formObject.title,
+            description: formObject.description,
+            price: formObject.price,
+            contact: formObject.contact
+        })
+            .then(() => setFormObject({
+                username: "",
+                title: "",
+                description: "",
+                price: "",
+                contact: ""
+            }))
+            .catch(err => console.log(err));
+
+    };
 
     return (
-
-
         <>
+
+            <br />
+            <br />
+            <br />
             <form className={classes.root} noValidate autoComplete="off">
+                <h2>Post Your Stuff</h2>
                 <div>
                     <TextField
                         required
                         id="outlined-required"
-                        label="Required"
-
+                        label="Username"
+                        color="secondary"
                         variant="outlined"
-
-                    />
+                        onChange={handleInputChange}
+                        name="username"
+                        value={formObject.username} />
+                    <br />
                     <TextField
                         required
                         id="outlined-required"
-                        label="Required"
-                        variant="outlined"
+                        label="Title"
                         color="secondary"
-
-                    />
-                    <TextField
-                        label="Required"
-                        id="outlined-margin-dense"
-                        className={classes.textField}
-                        helperText="Description"
-                        margin="dense"
                         variant="outlined"
-                    />
+                        onChange={handleInputChange}
+                        name="title"
+                        value={formObject.title} />
+                    <br />
+                    <TextField
+                        required
+                        id="outlined-required"
+                        label="Description"
+                        color="secondary"
+                        variant="outlined"
+                        onChange={handleInputChange}
+                        name="description"
+                        value={formObject.description} />
+                    <br />
+                    <TextField
+                        required
+                        id="outlined-required"
+                        label="Price $"
+                        color="secondary"
+                        variant="outlined"
+                        onChange={handleInputChange}
+                        name="price"
+                        helper text="Email or Phone #"
+                        value={formObject.price} />
+                    <br />
+                    <TextField
+                        required
+                        id="outlined-required"
+                        label="Contact"
+                        color="secondary"
+                        variant="outlined"
+                        onChange={handleInputChange}
+                        name="contact"
+                        helper text="Email or Phone #"
+                        value={formObject.contact} />
+
+
+
+
+
                 </div>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    // endIcon={<Icon>send</Icon>}
+                    onClick={handleFormSubmit}
+                >
+                    Submit
+      </Button>
             </form>
         </>
     )
