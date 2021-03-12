@@ -7,8 +7,8 @@ export default {
     getPosts: function () {
         return axios.get("/api/posts")
     },
-    savePosts: function (bookData) {
-        return axios.post("/api/posts", bookData);
+    savePosts: function (setFormObject) {
+        return axios.post("/api/posts", setFormObject);
     },
 
 }
