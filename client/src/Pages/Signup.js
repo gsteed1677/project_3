@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import { Container } from "react-bootstrap"
 
 export default function Signup() {
   const emailRef = useRef()
@@ -33,8 +34,8 @@ export default function Signup() {
 
   return (
     <>
-      <Card>
-        <Card.Body>
+      <Card className="w-100" style={{ maxWidth: "400px", justifyContent: "center" }}>
+           <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
@@ -55,10 +56,10 @@ export default function Signup() {
             </Button>
           </Form>
         </Card.Body>
-      </Card>
       <div className="w-100 text-center mt-2">
         Already have an account? <Link to="/login">Log In</Link>
       </div>
+      </Card>
     </>
   )
 }

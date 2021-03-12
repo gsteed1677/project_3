@@ -1,83 +1,69 @@
 import React, { Component, useState } from "react";
-import Grid from '@material-ui/core/Grid';
-import "./App.css";
-import Navbar from "./Navbar"
-import Search from "./Search"
-import SearchInput from "./SearchResult"
-import AboutUs from "./AboutUs"
-import Trending from "./Trending"
-import DumpStuff from "./DumpStuff"
+import "../App.css";
 import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Dashboard from "./Dashboard"
-import Login from "./Login"
-import PrivateRoute from "./PrivateRoute"
-import ForgotPassword from "./ForgotPassword"
-import UpdateProfile from "./UpdateProfile"
-import PostFormPage from "./PostFormPage"
+import Dashboard from "../Pages/Dashboard"
+import Signup from "../Pages/Signup"
+import Login from "../Pages/Login"
+import PrivateRoute from "../Pages/PrivateRoute"
+import ForgotPassword from "../Pages/ForgotPassword"
+import UpdateProfile from "../Pages/UpdateProfile"
+import PostFormPage from "../Pages/PostFormPage"
+import Main from "../Pages/Main"
+import Navbar from "./Navbar"
 
 
 function App() {
   const [data, setData] = useState([])
   return (
     <Router>
+        <AuthProvider>
+
       <div className="App">
         <Navbar />
+        <Route exact path="/"component={Main}/>
 
-        <Route exact path="/">
-          <Search setData={setData} />
-
-          <SearchInput setData={setData} data={data} />
-
-          <Grid container>
-            <Grid item xs={4}>
-              <Trending title="Top Trending" />
-            </Grid>
-            <Grid item xs={4}>
-              <Trending title="Second in line" />
-            </Grid>
-            <Grid item xs={4}>
-              <Trending title="Third from the top" />
-            </Grid>
-          </Grid>
-          <br />
-          <br />
-          <DumpStuff />
-         
-
-
-          <AboutUs />
-        </Route>
-        <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="w-100" style={{ maxWidth: "400px" }}>
-        <Router>
-          <AuthProvider>
             <Switch>
               <PrivateRoute exact path="/" component={Dashboard} />
-              <PrivateRoute path="/update-profile" component={UpdateProfile} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/login" component={Login} />
-              <Route path="/forgot-password" component={ForgotPassword} />
+              <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/forgot-password" component={ForgotPassword} />
             </Switch>
-          </AuthProvider>
+
+              <Route exact path="/postform/:id"
+              component={PostFormPage} />
+            
+        </div>
+        </AuthProvider>
+         
         </Router>
-      </div>
-    </Container>
-        {/* <Route exact path="/login">
-          <LoginForm />
-        </Route>
-        <Route exact path="/signup">
-          <SignUp />
-        </Route> */}
-        <Route exact path="/postform/:id">
-          <PostFormPage />
-        </Route>
-      </div>
-    </Router>
+       
+        
+        
+
+       
+
+       
+
+          
+    //     </Route>
+    //       <AuthProvider>
+    // //       </AuthProvider>
+
+    //     <Route exact path= "/Signup">
+    //     <Container
+    //   className="d-flex align-items-center justify-content-center"
+    //   style={{ minHeight: "100vh" }}
+    //   >
+    //   <div className="w-100" style={{ maxWidth: "400px" }}>
+    //      
+    //      </div>
+    // </Container>
+    // </Route>
+        
+    //     </div>
   );
 }
 
