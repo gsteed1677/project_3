@@ -8,6 +8,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import HomeWorkIcon from '@material-ui/icons/HomeWork';
 import { Link } from 'react-router-dom';
 
+import { Grid } from '@material-ui/core';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +22,11 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  style:{
+    background: 'linear-gradient(30deg, #1b5e20 30%, #81c784 90%)',
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+  }
+  
 }));
 
 
@@ -26,8 +34,9 @@ export default function ButtonAppBar() {
   const classes = useStyles();
 
   return (
+    <Grid className={classes.style}>
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.style}>
         <Toolbar>
           <Link to="/">
             <HomeWorkIcon edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -41,6 +50,7 @@ export default function ButtonAppBar() {
         </Toolbar>
       </AppBar>
     </div>
+    </Grid>
   );
 }
 

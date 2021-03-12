@@ -17,14 +17,8 @@ const useStyles = makeStyles({
   root: {
     margin: "20px"
    
-    
   },
-  media:{
-      height: 60,
-  paddingTop: "10", // 16:9,
-  marginTop: "30",
-
-  }
+ 
 });
 
 export default function ImgMediaCard(props) {
@@ -32,13 +26,13 @@ export default function ImgMediaCard(props) {
 
   return (
 
-    <Card className={classes.root} class="card"> 
+    <Card className={classes.root} class="cardTrending"> 
       <CardActionArea>
         <CardMedia className={classes.media}
           component="img"
           alt="Image Here"
           height="140"
-          image={Image}
+          image={props.Image}
           title="Trending Image"
         />
         <CardContent>
@@ -46,16 +40,16 @@ export default function ImgMediaCard(props) {
             {props.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-           Insert data or title here
+           {props.data}
           </Typography>
-        </CardContent>
-      </CardActionArea>
       <CardActions>
         
         <Link>
               <FavoriteIcon to="Favorites" >Favorite</FavoriteIcon>
               </Link>
       </CardActions>
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
-import { deepOrange, deepPurple } from '@material-ui/core/colors';
+import Link from '@material-ui/core/Link';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,23 +14,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
+    
   },
-  orange: {
-    color: theme.palette.getContrastText(deepOrange[500]),
-    backgroundColor: deepOrange[500],
-  },
-  purple: {
-    color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
-  },
-  red: {
-    color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
-  },
-  purple: {
-    color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
-  },
+  style: {
+  background: 'linear-gradient(30deg, #1b5e20 30%, #81c784 90%)',
+  width: theme.spacing(7),
+  height: theme.spacing(7),
+  }
 }));
 
 export default function LetterAvatars() {
@@ -37,14 +28,41 @@ export default function LetterAvatars() {
 
   return (
     <div className={classes.root}>
-      <Avatar className={classes.orange}>AM</Avatar>
-      Amy Moseman 
-      <Avatar className={classes.orange}>AE</Avatar>
-      Alexa Ergun
-      <Avatar className={classes.purple}>EN</Avatar>
+      <Link href="https://github.com/amoseman1">
+      <Avatar className={classes.style}>AM</Avatar>
+      </Link>
+
+      <Link href="https://www.linkedin.com/in/amy-moseman-7867a9158/">
+      <LinkedInIcon fontSize="medium"></LinkedInIcon>
+      Amy Moseman
+      </Link>
+      
+      <Link href="https://github.com/alexaergun">
+      <Avatar className={classes.style}>AE</Avatar>
+     </Link>
+
+     <Link href="https://www.linkedin.com/in/alexaergun/">
+      <LinkedInIcon fontSize="medium"></LinkedInIcon>
+      Alexa Atwell
+      </Link>
+
+     <Link href="https://github.com/enevarez-ops">
+      <Avatar className={classes.style}>EN</Avatar>
+      </Link>
+
+    <Link href="https://www.linkedin.com/in/efrainnevarez/">
+      <LinkedInIcon fontSize="medium"></LinkedInIcon>
       Efrain Nevarez
-      <Avatar className={classes.purple}>GS</Avatar>
-      Garrett Steed
+      </Link>
+
+      <Link href="https://github.com/gsteed1677">
+      <Avatar className={classes.style}>GS</Avatar>
+      </Link>
+
+      <Link href="https://www.linkedin.com/in/garrett-steed/">
+      <LinkedInIcon fontSize="medium"></LinkedInIcon>
+      Garret Steed
+      </Link>
     </div>
   );
 }

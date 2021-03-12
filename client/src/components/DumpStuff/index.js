@@ -15,20 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import './styles.css'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  card: {
-    padding: theme.spacing(2),
-    margin: 'auto',
-    maxWidth: 500,
-    textAlign: 'center',
-  },
-  wrapIcon: {
-    verticalAlign: 'middle',
-    display: 'inline-flex'
-  }
-
+   
 }));
 
 
@@ -76,41 +63,10 @@ export default function OutlinedCard() {
         <h3>No Results to Display</h3>
       ) : (posts.map(post => {
         return (
-          <Grid container spacing={3}>
-            <Grid item xs={12} direction="row" alignItems="center">
-<<<<<<< HEAD
-          <Card class="card">
-            
-            <CardContent>
-
-              <Typography variant="h5" component="h2">
-                {post.title}
-              </Typography>
-              <Typography className={classes.pos} color="textSecondary">
-                {post.username} --  <Moment format="dddd, MMMM Do YYYY, h:mm:ss a">
-                  {post.date}
-                </Moment>
-              </Typography>
-              <Typography variant="body2" component="p">
-                <strong>Description:</strong> {post.description}
-                <br />
-                <strong>Price:</strong> ${post.price}
-                <br />
-                <strong>Contact:</strong> {post.contactNumber || post.contactEmail}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              
-                <Link>
-              <FavoriteIcon to="Favorites" >Favorite</FavoriteIcon>
-              </Link>
-            </CardActions>
-          </Card>
-          </Grid>
-=======
-              <Card >
-
-                <CardContent>
+            <Grid className="cardContainer" >
+              <Card class="card">
+{/*  direction="row" alignItems="center" */}
+                <CardContent class="cardContent">
 
                   <Typography variant="h5" component="h2">
                     {post.title}
@@ -127,17 +83,16 @@ export default function OutlinedCard() {
                     <br />
                     <strong>Contact:</strong> {post.contactNumber || post.contactEmail}
                   </Typography>
-                </CardContent>
                 <CardActions>
 
                   <Link>
                     <FavoriteIcon to="Favorites" >Favorite</FavoriteIcon>
                   </Link>
                 </CardActions>
+                </CardContent>
               </Card>
             </Grid>
->>>>>>> bb79c65bf95da359dd08b1b9992da82ffcdbc981
-          </Grid>)
+          )
       }
       ))}
     </div>)
