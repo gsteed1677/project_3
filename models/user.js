@@ -23,6 +23,10 @@ const userSchema = new Schema({
         unique: true,
         trim: true
     },
+    userPosts: [{
+        type: Schema.Types.ObjectId,
+        ref: "Post"
+    }]
     // {
     //     //we will need somethin ghere to save favorites posts for the user, that they drag into the "my favorites list"
     // }

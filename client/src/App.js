@@ -1,12 +1,12 @@
 import React, { Component, useState } from "react";
 import Grid from '@material-ui/core/Grid';
 import "./App.css";
-import Navbar from "./Navbar"
-import Search from "./Search"
-import SearchInput from "./SearchResult"
-import AboutUs from "./AboutUs"
-import Trending from "./Trending"
-import DumpStuff from "./DumpStuff"
+import Navbar from "./components/Navbar"
+import Search from "./components/Search"
+import SearchInput from "./components/SearchResult"
+import AboutUs from "./components/AboutUs"
+import Trending from "./components/Trending"
+import DumpStuff from "./components/DumpStuff"
 import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
@@ -15,7 +15,7 @@ import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
-import PostFormPage from "./PostFormPage"
+import PostFormPage from "./components/PostFormPage"
 
 
 function App() {
