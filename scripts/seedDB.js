@@ -25,7 +25,7 @@ const userPostSeed = [
     {
         username: "artgurl",
         title: "painting",
-        description: "3 8x10 canvases, mixed brushes and some acrylic paint",
+        description: "3 8x10 canvases, mixed brushes and some acrylic paint editing to see how this will look cuz i think it will look amazing but who knows",
         price: 30,
         contactNumber: 555 - 897 - 3210,
         contactEmail: null

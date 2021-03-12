@@ -14,11 +14,19 @@ export default function SearchInput(props) {
     return (
       <div>{
         props.data.map(photo => {
-        return (<img src={photo.urls.small} />)
+        return (
+        
+        <img src={photo.urls.small} />
+        
+        
+        
+      
+        )
 
        })
      }</div>
     );
   }
 
+  
 

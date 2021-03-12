@@ -12,22 +12,10 @@ import Grid from '@material-ui/core/Grid';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import './styles.css'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  card: {
-    padding: theme.spacing(2),
-    margin: 'auto',
-    maxWidth: 500,
-    textAlign: 'center',
-  },
-  wrapIcon: {
-    verticalAlign: 'middle',
-    display: 'inline-flex'
-  }
-
+   
 }));
 
 
@@ -75,11 +63,10 @@ export default function OutlinedCard() {
         <h3>No Results to Display</h3>
       ) : (posts.map(post => {
         return (
-          <Grid container spacing={3}>
-            <Grid item xs={12} direction="row" alignItems="center">
-              <Card >
-
-                <CardContent>
+            <Grid className="cardContainer" >
+              <Card class="card">
+{/*  direction="row" alignItems="center" */}
+                <CardContent class="cardContent">
 
                   <Typography variant="h5" component="h2">
                     {post.title}
@@ -96,16 +83,16 @@ export default function OutlinedCard() {
                     <br />
                     <strong>Contact:</strong> {post.contactNumber || post.contactEmail}
                   </Typography>
-                </CardContent>
                 <CardActions>
 
                   <Link>
                     <FavoriteIcon to="Favorites" >Favorite</FavoriteIcon>
                   </Link>
                 </CardActions>
+                </CardContent>
               </Card>
             </Grid>
-          </Grid>)
+          )
       }
       ))}
     </div>)

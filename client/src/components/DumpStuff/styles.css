@@ -1,0 +1,30 @@
+
+
+
+.card {
+  display: flex;
+  background: #FFFFFF;
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px;
+  transition: all .25s linear;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+  box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.8);
+}
+
+.cardContent{
+   display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+.cardContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: inherit;
+  margin-left: 200px;
+  margin-right: 200px;
+}
