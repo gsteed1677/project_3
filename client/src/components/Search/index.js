@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 export default function CustomizedInputBase(props) {
   const classes = useStyles();
   const searchInput = useRef();
-  
+
 
 
   const SearchHobby = (e) => {
@@ -72,9 +72,5 @@ export default function CustomizedInputBase(props) {
       {/* <DirectionsIcon />
       </IconButton> */}
     </Paper>
-    //   <SearchForm
-    //   handleInputChange={handleInputChange}
-    //   results={search}
-    // />
   );
 }

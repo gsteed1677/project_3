@@ -3,8 +3,9 @@ import API from "../util/API";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import React, { Fragment } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+// import { useAuth } from "../../contexts/AuthContext";
 
 
 
@@ -24,7 +25,6 @@ function PostFormPage() {
 
     // const [posts, setPosts] = useState([])
     const [formObject, setFormObject] = useState({
-        username: "",
         title: "",
         description: "",
         price: "",
@@ -40,14 +40,14 @@ function PostFormPage() {
         event.preventDefault();
         //console.log(formObject)
         API.savePosts({
-            username: formObject.username,
+            id: id,
             title: formObject.title,
             description: formObject.description,
             price: formObject.price,
             contact: formObject.contact
         })
             .then(() => setFormObject({
-                username: "",
+
                 title: "",
                 description: "",
                 price: "",
@@ -66,16 +66,6 @@ function PostFormPage() {
             <form className={classes.root} noValidate autoComplete="off">
                 <h2>Post Your Stuff</h2>
                 <div>
-                    <TextField
-                        required
-                        id="outlined-required"
-                        label="Username"
-                        color="secondary"
-                        variant="outlined"
-                        onChange={handleInputChange}
-                        name="username"
-                        value={formObject.username} />
-                    <br />
                     <TextField
                         required
                         id="outlined-required"
