@@ -15,6 +15,8 @@ import Grid from '@material-ui/core/Grid';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+
+
 import './styles.css'
 import Postcard from '../Postcard'
 

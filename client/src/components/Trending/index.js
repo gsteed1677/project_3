@@ -8,14 +8,15 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Typography from '@material-ui/core/Typography';
-import { FormatAlignCenter } from '@material-ui/icons';
+
 
 const useStyles = makeStyles({
   root: {
-    margin: "20px"
+   
    
   },
  
@@ -25,7 +26,8 @@ export default function ImgMediaCard(props) {
   const classes = useStyles();
 
   return (
-
+    <Grid class="cardBackground">
+    <h1>Top Trending</h1>
     <Card className={classes.root} class="cardTrending"> 
       <CardActionArea>
         <CardMedia className={classes.media}
@@ -44,12 +46,13 @@ export default function ImgMediaCard(props) {
           </Typography>
       <CardActions>
         
-        <Link>
-              <FavoriteIcon to="Favorites" >Favorite</FavoriteIcon>
-              </Link>
+        <Button>
+              <FavoriteIcon to="Favorites" color="secondary">Favorite</FavoriteIcon>
+              </Button>
       </CardActions>
         </CardContent>
       </CardActionArea>
     </Card>
+  </Grid>
   );
 }
