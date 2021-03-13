@@ -36,7 +36,7 @@ function Postcard({ post, children }) {
                         <br />
                         <strong>Price:</strong> ${post.price}
                         <br />
-                        <strong>Contact:</strong> {post.contactNumber || post.contactEmail}
+                        <strong>Contact:</strong> {post.contactEmail}
                     </Typography>
                     <CardActions>
 

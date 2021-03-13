@@ -22,10 +22,6 @@ const postSchema = new Schema({
         required: true,
         trim: true
     },
-    contactNumber: {
-        type: Number,
-        trim: true
-    },
     contactEmail: {
         type: String,
         trim: true
