@@ -5,11 +5,9 @@ router.route("/posts")
     .get(postRoutes.findAll)
     .post(postRoutes.create)
 
-// router.route("/:id")
-//     .get(postRoutes.findById)
-//     .put(postRoutes.update)
-//     .delete(postRoutes.remove);
-
+router.route("/posts/:id")
+    //     // .put(postRoutes.update)
+    .delete(postRoutes.remove);
 
 
 module.exports = router;
