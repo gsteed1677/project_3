@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react';
 import API from "../util/API";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { Fragment } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-// import { useAuth } from "../../contexts/AuthContext";
-
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,12 +50,10 @@ function PostFormPage() {
                 contact: ""
             }))
             .catch(err => console.log(err));
-
     };
 
     return (
         <>
-
             <br />
             <br />
             <br />
@@ -107,11 +101,6 @@ function PostFormPage() {
                         name="contact"
                         helper text="Email or Phone #"
                         value={formObject.contact} />
-
-
-
-
-
                 </div>
                 <Button
                     variant="contained"
@@ -119,9 +108,7 @@ function PostFormPage() {
                     className={classes.button}
                     // endIcon={<Icon>send</Icon>}
                     onClick={handleFormSubmit}
-                >
-                    Submit
-      </Button>
+                >Submit</Button>
             </form>
         </>
     )
