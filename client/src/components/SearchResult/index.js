@@ -8,8 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 export default function SearchInput(props) {
   const PhotoRend = {
-<<<<<<< HEAD
-      photos: props.data,
+    photos: props.data,
       // page: 1,
       // per_page: 8,
       // isLoading: false
@@ -37,27 +36,5 @@ export default function SearchInput(props) {
      </div>
     );
   }
-=======
-    photos: props.data,
-    page: 1,
-    per_page: 8,
-    isLoading: false
-  };
-
-
-  return (
-    <div>{
-      props.data.map(photo => {
-        return (
-
-          <img src={photo.urls.small} />
-
-        )
-      })
-    }</div>
-  );
-}
-
->>>>>>> 2825876673ad4f417e8a7fcf21c8ff62018bf72c
 
 

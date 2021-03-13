@@ -74,10 +74,6 @@ export default function CustomizedInputBase(props) {
       {/* <DirectionsIcon />
       </IconButton> */}
     </Paper>
-<<<<<<< HEAD
-    </Container>
-    
-=======
->>>>>>> 2825876673ad4f417e8a7fcf21c8ff62018bf72c
-  );
+  </Container>
+    );
 }

@@ -15,8 +15,8 @@ import Grid from '@material-ui/core/Grid';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import UpdateIcon from '@material-ui/icons/Update';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+
+
 import './styles.css'
 import Postcard from '../Postcard'
 
@@ -75,49 +75,6 @@ export default function OutlinedCard() {
         </ButtonGroup>
 
       </Grid>
-<<<<<<< HEAD
-
-      {!posts.length ? (
-        <h3>No Results to Display</h3>
-      ) : (posts.map(post => {
-        return (
-            <Grid className="cardContainer" >
-              <Card class="card">
-{/*  direction="row" alignItems="center" */}
-                <CardContent class="cardContent">
-
-                  <Typography variant="h5" component="h2">
-                    {post.title}
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {post.username} --  <Moment format="dddd, MMMM Do YYYY, h:mm:ss a">
-                      {post.date}
-                    </Moment>
-                  </Typography>
-                  <Typography variant="body2" component="p">
-                    <strong>Description:</strong> {post.description}
-                    <br />
-                    <strong>Price:</strong> ${post.price}
-                    <br />
-                    <strong>Contact:</strong> {post.contactNumber || post.contactEmail}
-                  </Typography>
-                <CardActions>
-
-                  <Button>
-                    <FavoriteIcon to="Favorites" color="secondary">Favorite</FavoriteIcon>
-                    </Button>
-                    <Button>
-                    <DeleteForeverIcon to="Trash" color="error">Delete</DeleteForeverIcon>
-                    </Button>
-                    <Button>
-                    <UpdateIcon to="Update" color="primary">Update</UpdateIcon>
-                    </Button>
-
-                </CardActions>
-                </CardContent>
-              </Card>
-            </Grid>
-=======
       {!filter ?
         posts.map(post => {
           return (
@@ -128,7 +85,6 @@ export default function OutlinedCard() {
                 <FavoriteIcon to="Favorites" >Favorite</FavoriteIcon>
               </Link>
             </Postcard>
->>>>>>> 2825876673ad4f417e8a7fcf21c8ff62018bf72c
           )
           // return (<Grid className="cardContainer" >
           //   <Card class="card">
