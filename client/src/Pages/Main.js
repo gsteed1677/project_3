@@ -11,8 +11,6 @@ export default function Main() {
   const [data, setData] = useState([])
 
 
-
-
   return (
     <div className="App">
       <Search setData={setData} />
