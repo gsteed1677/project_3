@@ -24,7 +24,7 @@ function PostFormPage() {
         title: "",
         description: "",
         price: "",
-        contact: "",
+        contactEmail: "",
     });
 
     function handleInputChange(event) {
@@ -40,14 +40,14 @@ function PostFormPage() {
             title: formObject.title,
             description: formObject.description,
             price: formObject.price,
-            contact: formObject.contact
+            contactEmail: formObject.contactEmail
         })
             .then(() => setFormObject({
 
                 title: "",
                 description: "",
                 price: "",
-                contact: ""
+                contactEmail: ""
             }))
             .catch(err => console.log(err));
     };
@@ -94,13 +94,13 @@ function PostFormPage() {
                     <TextField
                         required
                         id="outlined-required"
-                        label="Contact"
+                        label="Contact Email"
                         color="secondary"
                         variant="outlined"
                         onChange={handleInputChange}
-                        name="contact"
+                        name="contactEmail"
                         helper text="Email or Phone #"
-                        value={formObject.contact} />
+                        value={formObject.contactEmail} />
                 </div>
                 <Button
                     variant="contained"
