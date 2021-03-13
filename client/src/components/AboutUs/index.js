@@ -61,7 +61,7 @@ export default function LetterAvatars() {
 
       <Link href="https://www.linkedin.com/in/garrett-steed/">
       <LinkedInIcon fontSize="medium"></LinkedInIcon>
-      Garret Steed
+      Garrett Steed
       </Link>
     </div>
   );

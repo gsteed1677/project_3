@@ -12,6 +12,8 @@ import Grid from '@material-ui/core/Grid';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import UpdateIcon from '@material-ui/icons/Update';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import './styles.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -85,9 +87,16 @@ export default function OutlinedCard() {
                   </Typography>
                 <CardActions>
 
-                  <Link>
-                    <FavoriteIcon to="Favorites" >Favorite</FavoriteIcon>
-                  </Link>
+                  <Button>
+                    <FavoriteIcon to="Favorites" color="secondary">Favorite</FavoriteIcon>
+                    </Button>
+                    <Button>
+                    <DeleteForeverIcon to="Trash" color="error">Delete</DeleteForeverIcon>
+                    </Button>
+                    <Button>
+                    <UpdateIcon to="Update" color="primary">Update</UpdateIcon>
+                    </Button>
+
                 </CardActions>
                 </CardContent>
               </Card>

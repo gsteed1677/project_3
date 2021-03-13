@@ -9,6 +9,7 @@ import SearchIcon from '@material-ui/icons/Search';
 // import DirectionsIcon from '@material-ui/icons/Directions';
 import API from '../../util/API'
 import { SettingsSystemDaydreamTwoTone } from '@material-ui/icons';
+import { Container } from '@material-ui/core';
 
 
 
@@ -54,6 +55,7 @@ export default function CustomizedInputBase(props) {
   }
 
   return (
+    <Container Container style={{display:'flex', justifyContent:'center', marginTop:'10px'}}>
     <Paper component="form" className={classes.root} onSubmit={SearchHobby}>
       {/* <IconButton className={classes.iconButton} aria-label="menu">
         <MenuIcon />
@@ -61,7 +63,7 @@ export default function CustomizedInputBase(props) {
       <InputBase
         ref={searchInput}
         className={classes.input}
-        placeholder="Search Hobby Drop"
+        placeholder="Search for Inspiration"
         inputProps={{ 'aria-label': 'search google maps' }}
       />
       <IconButton type="submit" className={classes.iconButton} aria-label="search">
@@ -72,9 +74,7 @@ export default function CustomizedInputBase(props) {
       {/* <DirectionsIcon />
       </IconButton> */}
     </Paper>
-    //   <SearchForm
-    //   handleInputChange={handleInputChange}
-    //   results={search}
-    // />
+    </Container>
+    
   );
 }

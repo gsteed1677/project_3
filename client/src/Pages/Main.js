@@ -17,6 +17,7 @@ export default function Main() {
         <div className="App">
         <Search setData={setData} />
         <SearchInput setData={setData} data={data} />
+          <DumpStuff />
         <Grid container>
             <Grid item xs={4}>
               <Trending title="Top Trending" data="The one that the people love to hate" Image="https://images.unsplash.com/photo-1567113463300-102a7eb3cb26?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8bGF1bmRyeXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/>
@@ -30,7 +31,6 @@ export default function Main() {
           </Grid>
           <br />
           <br />
-          <DumpStuff />
           <AboutUs />
 
 
