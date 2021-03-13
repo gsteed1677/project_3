@@ -10,5 +10,8 @@ export default {
     savePosts: function (setFormObject) {
         return axios.post("/api/posts", setFormObject);
     },
+    deletePost: function (id) {
+        return axios.delete("/api/posts/" + id);
+    }
 
 }

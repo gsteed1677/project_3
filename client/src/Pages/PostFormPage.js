@@ -1,12 +1,9 @@
-import { useState, useEffect } from 'react';
 import API from "../util/API";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { Fragment } from 'react';
-import { useParams } from 'react-router';
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,7 +21,6 @@ function PostFormPage() {
 
     // const [posts, setPosts] = useState([])
     const [formObject, setFormObject] = useState({
-        username: "",
         title: "",
         description: "",
         price: "",
@@ -40,42 +36,30 @@ function PostFormPage() {
         event.preventDefault();
         //console.log(formObject)
         API.savePosts({
-            username: formObject.username,
+            id: id,
             title: formObject.title,
             description: formObject.description,
             price: formObject.price,
             contact: formObject.contact
         })
             .then(() => setFormObject({
-                username: "",
+
                 title: "",
                 description: "",
                 price: "",
                 contact: ""
             }))
             .catch(err => console.log(err));
-
     };
 
     return (
         <>
-
             <br />
             <br />
             <br />
             <form className={classes.root} noValidate autoComplete="off">
                 <h2>Post Your Stuff</h2>
                 <div>
-                    <TextField
-                        required
-                        id="outlined-required"
-                        label="Username"
-                        color="secondary"
-                        variant="outlined"
-                        onChange={handleInputChange}
-                        name="username"
-                        value={formObject.username} />
-                    <br />
                     <TextField
                         required
                         id="outlined-required"
@@ -117,11 +101,6 @@ function PostFormPage() {
                         name="contact"
                         helper text="Email or Phone #"
                         value={formObject.contact} />
-
-
-
-
-
                 </div>
                 <Button
                     variant="contained"
@@ -129,9 +108,7 @@ function PostFormPage() {
                     className={classes.button}
                     // endIcon={<Icon>send</Icon>}
                     onClick={handleFormSubmit}
-                >
-                    Submit
-      </Button>
+                >Submit</Button>
             </form>
         </>
     )
