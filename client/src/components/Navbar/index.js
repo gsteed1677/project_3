@@ -34,6 +34,18 @@ export default function ButtonAppBar() {
 
   return (
     <Grid className={classes.style}>
+<<<<<<< HEAD
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.style}>
+        <Toolbar>
+          <Link to="/">
+            <HomeWorkIcon edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <MenuIcon />
+            </HomeWorkIcon>
+          </Link>
+          <Typography variant="h6" className={classes.title}>
+            HoBBYDRoP
+=======
       <div className={classes.root}>
         <AppBar position="static" className={classes.style}>
           <Toolbar>
@@ -44,6 +56,7 @@ export default function ButtonAppBar() {
             </Link>
             <Typography variant="h6" className={classes.title}>
               HoBBYDRoP
+>>>>>>> a83a163f6b64bd0cb77f5819e0540b5fa9b2cd5e
           </Typography>
             <Link to="/login"><Button color="inherit">Login/Signup</Button></Link>
           </Toolbar>
