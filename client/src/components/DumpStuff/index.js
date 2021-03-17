@@ -36,7 +36,7 @@ export default function OutlinedCard() {
       .then(res => {
         console.log(res.data)
         setPosts(res.data)
-        setFilterPost(res.data.filter(post => post.id === currentUser.uid))
+        setFilterPost(res.data.filter(post => post.id === currentUser.id))
 
       })
       .catch(err => console.log(err))
@@ -61,7 +61,6 @@ export default function OutlinedCard() {
           <Link to={`postform/${currentUser && currentUser.uid}`}><Button>Make a Post</Button></Link>
 
           <Button onClick={handleFilter}>My Posts</Button>
-
           <Button>My Favorites</Button>
         </ButtonGroup>
 
