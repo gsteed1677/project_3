@@ -4,6 +4,8 @@ import TextField from '@material-ui/core/TextField'; import Button from '@materi
 import { makeStyles } from '@material-ui/core/styles';
 import API from "../util/API";
 import { useParams } from 'react-router-dom';
+// import history from "../util/history";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,20 +29,13 @@ function UpdatePostForm(props) {
     };
 
     function updatePost() {
-        API.updatePost(id, newPost) //here lies the problem, i think its my route getPost
+        API.updatePost(id, newPost)
             .then((res) => console.log(res))
+            .then(alert("Your post has been updated!"))
+            //.then(history.push("/"))
+            .catch(err => console.log(err))
     }
 
-
-    // function handleFormSubmit(event) {
-    //     event.preventDefault();
-    //     //console.log(formObject)
-    //     API.getPost()
-    //         .then((res) => console.log(res))//setNewPost(res.data))
-    //         .catch(err => console.log(err));
-    // }
-
-    //console.log(props)
     return (<>
 
         <Postcard
