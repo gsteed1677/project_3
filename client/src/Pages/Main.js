@@ -27,8 +27,7 @@ export default function Main() {
           <Trending title="Third from the top" data="The one that makes the world go round" Image="https://images.unsplash.com/photo-1605522561233-768ad7a8fabf?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y29va2luZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
         </Grid>
       </Grid>
-      <br />
-      <br />
+
       <AboutUs />
 
 
