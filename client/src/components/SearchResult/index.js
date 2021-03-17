@@ -20,17 +20,20 @@ export default function SearchInput(props) {
         <Grid style={{display:'flex',marginTop: '15px', marginBottom: '15px'}}>
         {props.data.map(photo => {
         return (
-        <Card>
-          <CardActionArea>
-          <CardMedia>
+        <Card style={{display:'flex',marginTop: '15px', marginBottom: '15px'}}>
+          
+          <CardMedia >
         <img src={photo.urls.small} />
         
         </CardMedia>
-        </CardActionArea>
+      
         </Card>
       
+
+
+
+
       )
-      
     })}
     </Grid>
      </div>

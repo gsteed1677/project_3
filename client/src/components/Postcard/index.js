@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 // import { List, ListItem } from '@material-ui/core';
 import Moment from 'react-moment';
-import { Link } from 'react-router-dom';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+// import { Link } from 'react-router-dom';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +21,7 @@ function Postcard({ post, children }) {
         <Grid className="cardContainer" >
             <Card class="card">
                 {/*  direction="row" alignItems="center" */}
-                <CardContent class="cardContent">
+                <CardContent className="cardContent">
 
                     <Typography variant="h5" component="h2">
                         {post.title}
