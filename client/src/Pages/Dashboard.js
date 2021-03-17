@@ -36,7 +36,7 @@ export default function Dashboard() {
         
         </Card.Body>
       <div className="w-100 text-center mt-2">
-        <Button variant="link" onClick={handleLogout} >
+        <Button variant="link" onClick={handleLogout} href="/login" >
           Log Out
         </Button>
       </div>
