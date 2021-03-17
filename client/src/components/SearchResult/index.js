@@ -14,7 +14,7 @@ export default function SearchInput(props) {
             <Card>
               <CardActionArea>
                 <CardMedia>
-                  <img src={photo.urls.small} alt="search image" />
+                  <img src={photo.urls.small} alt="search" />
 
                 </CardMedia>
               </CardActionArea>
