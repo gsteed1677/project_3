@@ -37,7 +37,7 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static" className={classes.style}>
         <Toolbar>
-          <Link to="/login">
+          <Link to="/">
             <HomeWorkIcon edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
               <MenuIcon />
             </HomeWorkIcon>
