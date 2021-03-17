@@ -7,6 +7,10 @@ export default {
     getPosts: function () {
         return axios.get("/api/posts")
     },
+    updatePost: function (id, data) {
+        //.get
+        return axios.put("/api/posts/" + id, data);
+    },
     savePosts: function (setFormObject) {
         return axios.post("/api/posts", setFormObject);
     },
