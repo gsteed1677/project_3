@@ -35,21 +35,11 @@ export default function Dashboard() {
           </Button>
 
         </Card.Body>
-<<<<<<< HEAD
-      <div className="w-100 text-center mt-2">
-        <Link>
-        <Button variant="link" onClick={handleLogout} href="/login" >
-          Log Out
-        </Button>
-        </Link>
-      </div>
-=======
         <div className="w-100 text-center mt-2">
           <Button variant="link" onClick={handleLogout} href="/login">
             Log Out
         </Button>
         </div>
->>>>>>> a83a163f6b64bd0cb77f5819e0540b5fa9b2cd5e
       </Card>
     </Container>
   )

@@ -58,11 +58,7 @@ export default function OutlinedCard() {
 
         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
 
-<<<<<<< HEAD
-          <Link to={`postform/ ${currentUser&&currentUser.uid}`}><Button>Make a Post</Button></Link>
-=======
           <Link to={`postform/${currentUser && currentUser.uid}`}><Button>Make a Post</Button></Link>
->>>>>>> a83a163f6b64bd0cb77f5819e0540b5fa9b2cd5e
 
           <Button onClick={handleFilter}>My Posts</Button>
           <Button>My Favorites</Button>
