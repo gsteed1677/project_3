@@ -6,7 +6,8 @@ router.route("/posts")
     .post(postRoutes.create)
 
 router.route("/posts/:id")
-    //     // .put(postRoutes.update)
+    //.get(postRoutes.findById)
+    .put(postRoutes.update)
     .delete(postRoutes.remove);
 
 
