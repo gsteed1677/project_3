@@ -52,17 +52,13 @@ export default function OutlinedCard() {
       .catch(err => console.log(err))
   }
 
-  // function updatePost() {
-
-  // }
-
   return (
     <div className={classes.root}>
       <Grid>
 
         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
 
-          <Link to={`postform/${currentUser.uid}`}><Button>Make a Post</Button></Link>
+          <Link to={`postform/${currentUser && currentUser.uid}`}><Button>Make a Post</Button></Link>
 
           <Button onClick={handleFilter}>My Posts</Button>
 
