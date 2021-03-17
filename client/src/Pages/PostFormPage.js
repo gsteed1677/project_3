@@ -41,7 +41,7 @@ function PostFormPage() {
             description: formObject.description,
             price: formObject.price,
             contactEmail: formObject.contactEmail
-        })
+        }).then(alert("You have successfully made a new post!"))
             .then(() => setFormObject({
 
                 title: "",

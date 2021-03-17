@@ -21,11 +21,11 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
-  style:{
+  style: {
     background: 'linear-gradient(30deg, #1b5e20 30%, #81c784 90%)',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   }
-  
+
 }));
 
 
@@ -34,21 +34,21 @@ export default function ButtonAppBar() {
 
   return (
     <Grid className={classes.style}>
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.style}>
-        <Toolbar>
-          <Link to="/login">
-            <HomeWorkIcon edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <MenuIcon />
-            </HomeWorkIcon>
-          </Link>
-          <Typography variant="h6" className={classes.title}>
-            HoBBYDRoP
+      <div className={classes.root}>
+        <AppBar position="static" className={classes.style}>
+          <Toolbar>
+            <Link to="/">
+              <HomeWorkIcon edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                <MenuIcon />
+              </HomeWorkIcon>
+            </Link>
+            <Typography variant="h6" className={classes.title}>
+              HoBBYDRoP
           </Typography>
-          <Link to="/login"><Button color="inherit">Login/Signup</Button></Link>
-        </Toolbar>
-      </AppBar>
-    </div>
+            <Link to="/login"><Button color="inherit">Login/Signup</Button></Link>
+          </Toolbar>
+        </AppBar>
+      </div>
     </Grid>
   );
 }

@@ -1,6 +1,5 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import "../App.css";
-import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Dashboard from "../Pages/Dashboard"
@@ -16,7 +15,6 @@ import Navbar from "./Navbar"
 
 
 function App() {
-  const [data, setData] = useState([])
   return (
     <Router>
       <AuthProvider>

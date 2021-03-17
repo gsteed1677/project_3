@@ -8,7 +8,6 @@ export default {
         return axios.get("/api/posts")
     },
     updatePost: function (id, data) {
-        //.get
         return axios.put("/api/posts/" + id, data);
     },
     savePosts: function (setFormObject) {
